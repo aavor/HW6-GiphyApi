@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Giphy API</title>
-	<meta charset="utf-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Alfred Avor - Giphy API</title>
+	<meta charset="utf-8">	
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css">	
 </head>
+
 <body>
 
 	<div class="container">
 		
-		<div class="row">
-    		<div class="col-md-12">
-    			<button id="topicBtn"></button>
+		<div class="row" id="buttonRow">
+    		<div class="col-md-12" id="topicBtn">
+    			
     		</div>
   		</div>
 
-  		<div class="row">
+  		<div class="row" id="gifRow">
     		<div class="col-md-8" id="gifs">
     			
     		</div>
 
-			<div class="col-md-8">
-    			
+			<div class="col-md-4" id="inputRow">
+    			<form id="topic-form">
+			      <input type="text" id="topic-input"><br>
+			      <input id="add-topic" type="submit" value="Add a topic">	
+			    </form>
     		</div>    		
   		</div>	
 
 
 	</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
