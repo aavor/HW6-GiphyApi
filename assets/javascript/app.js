@@ -1,4 +1,4 @@
-var topics = ["Eden Hazard", "Anotnio Conte", "Didier Drogba", "John Terry"];
+var topics = ["Eden Hazard", "Anotnio Conte", "Didier Drogba", "Michael Jordan"];
 
 function renderButtons() {
 
@@ -10,17 +10,19 @@ function renderButtons() {
 		add.attr("data-name", topics[i]);
 		add.text(topics[i]);
 		$("#topicBtn").append(add);
-	}
+	};
 }
 $("#add-topic").on("click", function(event){
 	event.preventDefault();
 	var newTopic = $("#topic-input").val().trim();
 	topics.push(newTopic);
 	renderButtons();
+  console.log(topics.length);
+  console.log(topics);
 });
-renderButtons();
-console.log(topics.length);
-console.log(topics);
+
+
+function loadGif(){
 
 $("button").on("click", function() {
       // In this case, the "this" keyword refers to the button that was clicked
@@ -38,6 +40,7 @@ $("button").on("click", function() {
         .done(function(response) {
           // Storing an array of results in the results variable
           var results = response.data;
+          console.log(results);
           // Looping over every result item
           for (var i = 0; i < results.length; i++) {
             // Only taking action if the photo has an appropriate rating
@@ -57,10 +60,18 @@ $("button").on("click", function() {
               gifDiv.append(p);
               gifDiv.append(personImage);
               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-              $("#gifs").prepend(gifDiv);
+              $("#gifs").prepend(gifDiv);    
             }
           }
         });
+        loadGif();
+        console.log(queryURL);
     });
+};
 renderButtons();
+console.log(topics.length);
+console.log(topics);
+loadGif();
+
+
 	
