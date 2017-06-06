@@ -1,4 +1,4 @@
-var topics = ["Eden Hazard", "Anotnio Conte", "Didier Drogba", "Michael Jordan"];
+var topics = ["Eden Hazard", "Anotnio Conte", "Didier Drogba", "Michael Jordan", "Messi"];
 
 function renderButtons() {
 
@@ -17,6 +17,7 @@ $("#add-topic").on("click", function(event){
 	var newTopic = $("#topic-input").val().trim();
 	topics.push(newTopic);
 	renderButtons();
+  loadGif();
   console.log(topics.length);
   console.log(topics);
 });
@@ -41,6 +42,7 @@ $("button").on("click", function() {
           // Storing an array of results in the results variable
           var results = response.data;
           console.log(results);
+
           // Looping over every result item
           for (var i = 0; i < results.length; i++) {
             // Only taking action if the photo has an appropriate rating
@@ -68,6 +70,26 @@ $("button").on("click", function() {
         console.log(queryURL);
     });
 };
+
+function pauseGifs(){
+
+      $("#gif").on("click", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
+}
+
+
 renderButtons();
 console.log(topics.length);
 console.log(topics);
